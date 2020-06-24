@@ -1,0 +1,401 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png">
+
+    <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Thread Order
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS Files -->
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="../../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../../assets/demo/demo.css" rel="stylesheet" />
+
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet' />
+
+    <!--   Core JS Files   -->
+    <script src="../../assets/js/core/jquery.min.js"></script>
+    <script src="../../assets/js/core/popper.min.js"></script>
+    <script src="../../assets/js/core/bootstrap.min.js"></script>
+    <script src="../../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Google Maps Plugin    -->
+    <!-- Chart JS -->
+    <script src="../../assets/js/plugins/chartjs.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../../assets/demo/demo.js"></script>
+
+    <script src="../../JS/commonajaxservermethod.js"></script>
+    <script src="../../JS/CommonPath.js"></script>
+    <script src="../../JS/Loader/loader.js"></script>
+    <script src="../../JS/Entry/ieentry.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="orange">
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+            -->
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini">
+                    log
+                </a>
+                <a href="#" class="simple-text logo-normal">
+                    Ismat
+                </a>
+            </div>
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="../../index.html">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="now-ui-icons education_atom"></i>
+                            <p>Profile</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="ieentry_new.html">
+                            <i class="now-ui-icons location_map-big"></i>
+                            <p>Order Request</p>
+                        </a>
+                       
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="#">Rating Calculation</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="now-ui-icons  users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Nazmul</span>
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="#">Settings</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 style="color:navy;"class="title">Initial data</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="customerSelect" style="color:white; ">CUSTOMER</label>
+                                            <select class="form-control" id="customerSelect" onload="CustomerLoad()" onchange="CustomerWiseDevision()">
+                                                <option value="0">Select Customer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="customerDivisionSelect" style="color:white;">Customer Division</label>
+                                            <select class="form-control" id="customerDivisionSelect">
+                                                <option value="0">Select Customer Division</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="seasonText" style="color:white;">SEASON</label>
+                                            <input class="form-control" id="seasonText" type="text" placeholder="Season" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="styleNumberText" style="color:white;">STYLE NUMBER</label>
+                                            <input class="form-control" id="styleNumberText" type="text" placeholder="Style Number" onkeyup="inqueryNoGenerate()" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sitePlantSelect" style="color:white;">SITE/PLANT</label>
+                                            <select class="form-control" id="sitePlantSelect" onload="SitePlantLoad()">
+                                                <option value="0">Site/Plant</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="fabricWeightSelect" style="color:white;">FABRIC WEIGHT</label>
+                                            <select class="form-control" id="fabricWeightSelect" onload="FabricWeightLoad()">
+                                                <option value="0">Fabric Weight</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="soNumberText" style="color:white;">SO NUMBER</label>
+                                            <input class="form-control" id="soNumberText" type="text" placeholder="SO. Number" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sampleDateText" style="color:white;">SAMPLE DATE</label>
+                                            <input class="form-control" id="sampleDateText" type="text" placeholder="Sample Date" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="sizeText" style="color:white;">SIZE</label>
+                                            <input class="form-control" id="sizeText" type="text" placeholder="Size" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="colorText" style="color:white;">COLOR</label>
+                                            <input class="form-control" id="colorText" type="text" placeholder="Color" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="wastagePercentageText" style="color:white;">WASTAGE</label>
+                                            <input class="form-control" id="wastagePercentageText" type="text" placeholder="W/P (%)" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="productCategoryText" style="color:white;">PRODUCT CATEGORY</label>
+                                            <input class="form-control" id="productCategoryText" type="text" placeholder="Product Category" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="inqueryNoText" style="color:white;">INQUIRY ID</label>
+                                            <input type="text" class="form-control" placeholder="Search Inquiry No.." readonly id="inqueryNoText">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sampleStageText" style="color:white;">SAMPLE STAGE</label>
+                                            <input class="form-control" id="sampleStageText" type="text" placeholder="Sample Stage" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 style="color:navy; font-weight: 700;"="title">Stitch data</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <input class="form-control" id="opDescriptionText" type="text" placeholder="Operation Description" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <select class="form-control" id="stitchTypeSelect" onload="stitchTypeLoad()" onchange="dynamicThread()">
+                                                <option value="0">Stitch Type Select</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="machineQuantityText" style="color:white;">Machine Quantity</label>
+                                            <input class="form-control" id="machineQuantityText" type="text" placeholder="M/C Quantity" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2" id="rowQuantityDiv" style="display:none">
+                                        <div class="form-group">
+                                            <label for="rowText" style="color:white;">Row Quantity</label>
+                                            <input class="form-control" id="rowText" type="text" placeholder="Row" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="form-group">
+                                            <label for="groupText" style="color:white;">Group</label>
+                                            <input class="form-control" id="groupText" type="text" placeholder="Group" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-2" id="stitchQtnDiv">
+                                        <label for="stitchQtnText" style="color:white;">BARTACK QUNATITY</label>
+                                        <input class="form-control" id="stitchQtnText" type="text" placeholder="Stitch Quantity" />
+                                    </div>
+
+                                    <div class="col-sm-2" id="bightDiv">
+                                        <label for="stitchRateText" style="color:white;">BIGHT</label>
+                                        <input class="form-control" id="bightText" type="text" placeholder="Bight" />
+                                    </div>
+                                    <div class="col-sm-2" id="stitchRateDiv">
+                                        <div class="form-group">
+                                            <label for="stitchRateText" style="color:white;">SPI</label>
+                                            <input class="form-control" id="stitchRateText" type="text" placeholder="SPI (per 3cm.)" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group" id="seamLengthDiv">
+                                            <label for="seamLengthText" style="color:white;">SEAM LENGTH</label>
+                                            <input class="form-control" id="seamLengthText" type="text" placeholder="Seam Length" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="threadDiv">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="operationDataDiv">
+                            
+                                
+                                
+                            </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="form-group">
+                                <input id="submitButton" type="button" value="Set Operation" class="btn btn-primary" onclick="SaveAllInfo()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="row">
+        <div class="col-md-12">
+            <div class="card">
+
+            </div>
+        </div>
+    </div>-->
+
+            </div>
+                        <footer class="footer">
+                            <div class=" container-fluid ">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                About Us
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Blog
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="copyright" id="copyright">
+                                    &copy;
+                                    <script>
+                                        document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+                                    </script>, Designed by Zarin.
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#sampleDateText").datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
+        });
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+    });
+</script>

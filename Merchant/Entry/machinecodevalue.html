@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Stitch values type</title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="col-lg-12">
+        <div class="form-group">
+            <h1>Machine Code Value Entry</h1>
+        </div>
+        <div class="form-group">
+            <hr />
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="machineCodeSelect">Machine Code:</label>
+                    <select class="form-control" id="machineCodeSelect" onload="MachineCodeLoad()" onchange="MachineWiseStitchType()"></select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="stitchTypeSelect">Stitch Type:</label>
+                    <select class="form-control" id="stitchTypeSelect" onchange="StitchTypeWiseOperation()"></select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="stitchOperationSelect">Stitch Operation:</label>
+                    <select class="form-control" id="stitchOperationSelect"></select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="isActiveSelect">IsActive:</label>
+                    <select class="form-control" id="isActiveSelect">
+                        <option value="-1">Select IsActive</option>
+                        <option value="0">NO</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="spiText">SPI:</label>
+                    <input class="form-control" id="spiText" type="text" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="bightText">Bight:</label>
+                    <input class="form-control" id="bightText" type="text" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="quantityText">Quantity:</label>
+                    <input class="form-control" id="quantityText" type="text" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="uniteValueText">Value(per cm.):</label>
+                    <input class="form-control" id="uniteValueText" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <input class="btn btn-outline-danger" id="SubmitButton" type="button" value="Submit" onclick="AddMachineCodeValue()" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../Scripts/jquery-3.4.1.min.js"></script>
+<script src="../../Scripts/bootstrap.min.js"></script>
+<script src="../../JS/CommonPath.js"></script>
+<script src="../../JS/commonajaxservermethod.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.js"></script>
+<script src="../../JS/Entry/machinecodevalue.js"></script>

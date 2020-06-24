@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Customer Entry</title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="col-lg-12">
+        <div class="form-group">
+            <h1>Customer Entry</h1>
+        </div>
+        <div class="form-group">
+            <hr />
+        </div>
+    </div>
+    <div class="well">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="cuntomerNameText">Customer Name</label>
+                        <input class="form-control" id="cuntomerNameText" type="text" placeholder="Customer Name" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <select class="form-control" id="isActiveSelect">
+                            <option value="-1">Select IsActive</option>
+                            <option value="0">NO</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="confirmSubmit">Is Active</label>
+                        <input class="btn btn-danger" id="confirmSubmit" type="button" value="Confirm" onclick="addCustomerInfo()" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input class="btn btn-info" id="loadButton" type="button" value="Info Load" onclick="LoadAllCustomerInfo()" />
+            </div>
+            <div class="row" id="showDetails">
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
+<script src="../../Scripts/jquery-3.4.1.min.js"></script>
+<script src="../../Scripts/bootstrap.min.js"></script>
+<script src="../../JS/CommonPath.js"></script>
+<script src="../../JS/commonajaxservermethod.js"></script>
+<script src="../../JS/Customer/customerentry.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.js"></script>

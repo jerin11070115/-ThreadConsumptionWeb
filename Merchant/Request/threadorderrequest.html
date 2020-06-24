@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="../../JS/commonajaxservermethod.js"></script>
+    <script src="../../JS/CommonPath.js"></script>
+    <script src="../../JS/OrderRequest/threadorderrequest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+    <script src="../../JS/Loader/loader.js"></script>
+
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+
+    <!-- Operation modal -->
+
+    <div class="modal fade right" id="initialModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+        <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Initial Modal</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="customerSelect" style="color:white;">CUSTOMER</label>
+                                    <select class="form-control" id="customerSelect" onload="CustomerLoad()" onchange="CustomerWiseDevision()">
+                                        <option value="0">Select Customer</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="customerDivisionSelect" style="color:white;">Customer Division</label>
+                                    <select class="form-control" id="customerDivisionSelect">
+                                        <option value="0">Select Customer Division</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="seasonText" style="color:white;">SEASON</label>
+                                    <input class="form-control" id="seasonText" type="text" placeholder="Season" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="styleNumberText" style="color:white;">STYLE NUMBER</label>
+                                    <input class="form-control" id="styleNumberText" type="text" placeholder="Style Number" onkeyup="inqueryNoGenerate()" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="sitePlantSelect" style="color:white;">SITE/PLANT</label>
+                                    <select class="form-control" id="sitePlantSelect" onload="SitePlantLoad()">
+                                        <option value="0">Site/Plant</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="fabricWeightSelect" style="color:white;">FABRIC WEIGHT</label>
+                                    <select class="form-control" id="fabricWeightSelect" onload="FabricWeightLoad()">
+                                        <option value="0">Fabric Weight</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="soNumberText" style="color:white;">SO NUMBER</label>
+                                    <input class="form-control" id="soNumberText" type="text" placeholder="SO. Number" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="sampleDateText" style="color:white;">SAMPLE DATE</label>
+                                    <input class="form-control" id="sampleDateText" type="text" placeholder="Sample Date" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="sizeText" style="color:white;">SIZE</label>
+                                    <input class="form-control" id="sizeText" type="text" placeholder="Size" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="colorText" style="color:white;">COLOR</label>
+                                    <input class="form-control" id="colorText" type="text" placeholder="Color" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="wastagePercentageText" style="color:white;">WASTAGE</label>
+                                    <input class="form-control" id="wastagePercentageText" type="text" placeholder="Wastage Percentage" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="productCategoryText" style="color:white;">PRODUCT CATEGORY</label>
+                                    <input class="form-control" id="productCategoryText" type="text" placeholder="Product Category" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inqueryNoText" style="color:white;">INQUIRY ID</label>
+                                    <input type="text" class="form-control" placeholder="Search Inquiry No.." readonly id="inqueryNoText">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="sampleStageText" style="color:white;">SAMPLE STAGE</label>
+                                    <input class="form-control" id="sampleStageText" type="text" placeholder="sample Stage" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="SaveNewInitialValue()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Operation Modal Change onclick="SetNewOperationValue()"-->
+    <!-- Operation modal -->
+
+    <div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+        <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Operation Modal</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input id="indexHiddenValue" type="hidden" value="" />
+
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="machineQuantityText">Machine Quantity</label>
+                                <input class="form-control" id="machineQuantityText" type="text" placeholder="Machine Quantity" />
+                            </div>
+                        </div>
+                        <div class="row" id="rowQuantityDiv">
+                            <div class="form-group">
+                                <label for="rowText">Row Quantity</label>
+                                <input class="form-control" id="rowText" type="text" placeholder="Row" />
+                            </div>
+                        </div>
+                        <div class="row" id="stitchQtnDiv">
+                            <label for="stitchQtnText">BARTACK QUNATITY</label>
+                            <input class="form-control" id="stitchQtnText" type="text" placeholder="Stitch Quantity" />
+                        </div>
+
+                        <div class="row" id="bightDiv">
+                            <label for="stitchRateText">BIGHT</label>
+                            <input class="form-control" id="bightText" type="text" placeholder="Bight" />
+                        </div>
+                        <div class="row" id="stitchRateDiv">
+                            <div class="form-group">
+                                <label for="stitchRateText">SPI</label>
+                                <input class="form-control" id="stitchRateText" type="text" placeholder="SPI (per 3cm.)" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group" id="seamLengthDiv">
+                                <label for="seamLengthText">SEAM LENGTH</label>
+                                <input class="form-control" id="seamLengthText" type="text" placeholder="Seam Length" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-center">
+
+                    <button type="button" class="btn btn-primary" onclick="SetNewOperationValue()" data-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Operation Modal Change -->
+    <!-- Description Modal -->
+    <div class="modal fade right" id="descriptionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+        <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Description Modal</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input id="operationIndexHiddenValue" type="hidden" value="" />
+                    <input id="descriptionIndexHiddenValue" type="hidden" value="" />
+
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="brandSelect">Brand</label>
+                                <select class="form-control" id="brandSelect"><option value="0">Brand</option></select>
+                            </div>
+                        </div>
+                        <div class="row" id="tktDiv">
+                            <div class="form-group">
+                                <label for="tktSelect">Tkt/Tex</label>
+                                <select class="form-control" id="tktSelect">
+                                    <option value="0">Tkt/Tex</option>
+                                    <option value="10">10</option>
+                                    <option value="10">30</option>
+                                    <option value="36">36</option>
+                                    <option value="50">50</option>
+                                    <option value="75">75</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" id="packageDiv">
+                            <label for="packageSelect">Package</label>
+                            <select class="form-control" id="packageSelect">
+                                <option value="0">Package</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="1500">1500</option>
+                                <option value="2000">2000</option>
+                                <option value="2500">2500</option>
+                                <option value="3000">3000</option>
+                                <option value="3500">3500</option>
+                                <option value="4000">4000</option>
+                                <option value="4500">4500</option>
+                                <option value="5000">5000</option>
+                            </select>
+                        </div>
+
+                        <div class="row" id="shadeDiv">
+                            <label for="shadeText">Shade</label>
+                            <input class="form-control" id="shadeText" type="text" placeholder="Shade" />
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <br />
+                </div>
+                <div class="modal-footer justify-content-center">
+
+                    <button type="button" class="btn btn-primary" onclick="setNewdescriptionValue()" data-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Description Modal End -->
+
+    <div onload="LoadAllMachineCodeValue()" id="pdfDiv">
+        <div class="col-md-12" id="showdatadiv"></div>
+
+        <div class="col-md-12" id="showBrandDiv"></div>
+
+    </div>
+    <div id="editor"></div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#sampleDateText").datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
+        });
+    })
+</script>

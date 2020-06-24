@@ -1,0 +1,527 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png">
+
+    <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Order Request
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS Files -->
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="../../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../../assets/demo/demo.css" rel="stylesheet" />
+    <style>
+        .card {
+            overflow-x: auto;
+            overflow-y: auto;
+            /*width:100%;
+            height:100%;*/
+        }
+        .table{
+            position:static;
+            /*min-width:0px;*/
+           /*border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;*/
+ 
+        }
+        .table{
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+        }
+        .table td, table th{
+            border: 1px solid #ddd;
+  padding: 8px;
+        }
+        .table tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        .table tr:hover{
+            background-color: #ddd;
+        }
+        .table th{
+            padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0066cc;
+  color: white;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="orange">
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+            -->
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini">
+                    log
+                </a>
+                <a href="#" class="simple-text logo-normal">
+                    ismat
+                </a>
+            </div>
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="../../index.html">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="now-ui-icons education_atom"></i>
+                            <p>Profile</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="../Entry/ieentry_new.html">
+                            <i class="now-ui-icons location_map-big"></i>
+                            <p>Order Request</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="#">Order Request</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="now-ui-icons  users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Ismat Zarin</span>
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="#">Settings</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <!-- Operation modal -->
+
+                <div class="modal fade right" id="initialModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                    <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+                    <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title w-100" id="myModalLabel">Initial Modal</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="customerSelect" style="color:white;">CUSTOMER</label>
+                                                <select class="form-control" id="customerSelect" onload="CustomerLoad()" onchange="CustomerWiseDevision()">
+                                                    <option value="0">Select Customer</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="customerDivisionSelect" style="color:white;">Customer Division</label>
+                                                <select class="form-control" id="customerDivisionSelect">
+                                                    <option value="0">Select Customer Division</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="seasonText" style="color:white;">SEASON</label>
+                                                <input class="form-control" id="seasonText" type="text" placeholder="Season" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="styleNumberText" style="color:white;">STYLE NUMBER</label>
+                                                <input class="form-control" id="styleNumberText" type="text" placeholder="Style Number" onkeyup="inqueryNoGenerate()" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="sitePlantSelect" style="color:white;">SITE/PLANT</label>
+                                                <select class="form-control" id="sitePlantSelect" onload="SitePlantLoad()">
+                                                    <option value="0">Site/Plant</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="fabricWeightSelect" style="color:white;">FABRIC WEIGHT</label>
+                                                <select class="form-control" id="fabricWeightSelect" onload="FabricWeightLoad()">
+                                                    <option value="0">Fabric Weight</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="soNumberText" style="color:white;">SO NUMBER</label>
+                                                <input class="form-control" id="soNumberText" type="text" placeholder="SO. Number" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="sampleDateText" style="color:white;">SAMPLE DATE</label>
+                                                <input class="form-control" id="sampleDateText" type="text" placeholder="Sample Date" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="sizeText" style="color:white;">SIZE</label>
+                                                <input class="form-control" id="sizeText" type="text" placeholder="Size" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="colorText" style="color:white;">COLOR</label>
+                                                <input class="form-control" id="colorText" type="text" placeholder="Color" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="wastagePercentageText" style="color:white;">WASTAGE</label>
+                                                <input class="form-control" id="wastagePercentageText" type="text" placeholder="Wastage Percentage" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="productCategoryText" style="color:white;">PRODUCT CATEGORY</label>
+                                                <input class="form-control" id="productCategoryText" type="text" placeholder="Product Category" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="inqueryNoText" style="color:white;">INQUIRY ID</label>
+                                                <input type="text" class="form-control" placeholder="Search Inquiry No.." readonly id="inqueryNoText">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="sampleStageText" style="color:white;">SAMPLE STAGE</label>
+                                                <input class="form-control" id="sampleStageText" type="text" placeholder="sample Stage" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="SaveNewInitialValue()">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Operation Modal Change onclick="SetNewOperationValue()"-->
+                <!-- Operation modal -->
+
+                <div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+
+                    <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+                    <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title w-100" id="myModalLabel">Operation Modal</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input id="indexHiddenValue" type="hidden" value="" />
+
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label for="operationDescriptionText">Operation Description</label>
+                                            <input class="form-control" id="operationDescriptionText" type="text" placeholder="Operation Description" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label for="machineQuantityText">Machine Quantity</label>
+                                            <input class="form-control" id="machineQuantityText" type="text" placeholder="Machine Quantity" />
+                                        </div>
+                                    </div>
+                                    <div class="row" id="rowQuantityDiv">
+                                        <div class="form-group">
+                                            <label for="rowText">Row Quantity</label>
+                                            <input class="form-control" id="rowText" type="text" placeholder="Row" />
+                                        </div>
+                                    </div>
+                                    <div class="row" id="stitchQtnDiv">
+                                        <label for="stitchQtnText">BARTACK QUNATITY</label>
+                                        <input class="form-control" id="stitchQtnText" type="text" placeholder="Stitch Quantity" />
+                                    </div>
+
+                                    <div class="row" id="bightDiv">
+                                        <label for="stitchRateText">BIGHT</label>
+                                        <input class="form-control" id="bightText" type="text" placeholder="Bight" />
+                                    </div>
+                                    <div class="row" id="stitchRateDiv">
+                                        <div class="form-group">
+                                            <label for="stitchRateText">SPI</label>
+                                            <input class="form-control" id="stitchRateText" type="text" placeholder="SPI (per 3cm.)" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group" id="seamLengthDiv">
+                                            <label for="seamLengthText">SEAM LENGTH</label>
+                                            <input class="form-control" id="seamLengthText" type="text" placeholder="Seam Length" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="modal-footer justify-content-center">
+
+                                <button type="button" class="btn btn-primary" onclick="SetNewOperationValue()" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Operation Modal Change -->
+                <!-- Description Modal -->
+                <div class="modal fade right" id="descriptionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+
+                    <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+                    <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title w-100" id="myModalLabel">Description Modal</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input id="operationIndexHiddenValue" type="hidden" value="" />
+                                <input id="descriptionIndexHiddenValue" type="hidden" value="" />
+
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label for="brandSelect">Brand</label>
+                                            <select class="form-control" id="brandSelect"><option value="0">Brand</option></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="tktDiv">
+                                        <div class="form-group">
+                                            <label for="tktSelect">Tkt/Tex</label>
+                                            <select class="form-control" id="tktSelect">
+                                                <option value="0">Tkt/Tex</option>
+                                                <option value="10">10</option>
+                                                <option value="10">30</option>
+                                                <option value="36">36</option>
+                                                <option value="50">50</option>
+                                                <option value="75">75</option>
+                                                <option value="40">40</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="packageDiv">
+                                        <label for="packageSelect">Package</label>
+                                        <select class="form-control" id="packageSelect">
+                                            <option value="0">Package</option>
+                                            <option value="500">500</option>
+                                            <option value="1000">1000</option>
+                                            <option value="1500">1500</option>
+                                            <option value="2000">2000</option>
+                                            <option value="2500">2500</option>
+                                            <option value="3000">3000</option>
+                                            <option value="3500">3500</option>
+                                            <option value="4000">4000</option>
+                                            <option value="4500">4500</option>
+                                            <option value="5000">5000</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="row" id="shadeDiv">
+                                        <label for="shadeText">Shade</label>
+                                        <input class="form-control" id="shadeText" type="text" placeholder="Shade" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <br />
+                            </div>
+                            <div class="modal-footer justify-content-center">
+
+                                <button type="button" class="btn btn-primary" onclick="setNewdescriptionValue()" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Description Modal End -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+
+
+
+
+                            <div onload="LoadAllMachineCodeValue()" id="pdfDiv">
+                                <div class="col-md-12" id="showdatadiv"></div>
+
+                                <div class="col-md-12" id="showBrandDiv"></div>
+
+                            </div>
+                            <div id="editor"></div>
+
+                            <div onload="LoadForExcell()" id="excellDiv" style="display:none">
+                                <div class="col-md-12" id="showExcellDataDiv"></div>
+
+                                <div class="col-md-12" id="showExcellBrandDiv"></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class=" container-fluid ">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright" id="copyright">
+                        &copy;
+                        <script>
+                            document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+                        </script>, Designed by Himu.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../../assets/js/core/jquery.min.js"></script>
+    <script src="../../assets/js/core/popper.min.js"></script>
+    <script src="../../assets/js/core/bootstrap.min.js"></script>
+    <script src="../../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Google Maps Plugin    -->
+    <!-- Chart JS -->
+    <script src="../../assets/js/plugins/chartjs.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../../assets/demo/demo.js"></script>
+    <script src="../../JS/commonajaxservermethod.js"></script>
+    <script src="../../JS/CommonPath.js"></script>
+    <script src="../../JS/OrderRequest/threadorderrequest.js"></script>
+    <script src="../../JS/Loader/loader.js"></script>
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+</body>
+
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#sampleDateText").datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
+        });
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+    });
+</script>

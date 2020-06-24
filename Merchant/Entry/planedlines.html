@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Planed Lines Entry</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="../../JS/commonajaxservermethod.js"></script>
+    <script src="../../JS/CommonPath.js"></script>
+    <script src="../../JS/Entry/planedlines.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.js"></script>
+	<meta charset="utf-8" />
+    <style>
+        .main {
+            padding: 40px 0;
+        }
+
+            .main input,
+            .main input::-webkit-input-placeholder {
+                font-size: 11px;
+                padding-top: 3px;
+            }
+
+        .main-center {
+            margin-top: 30px;
+            /*margin: 0 auto;*/
+            max-width: 400px;
+            padding: 10px 40px;
+            background: #009edf;
+            color: #FFF;
+            text-shadow: none;
+            -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+            -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+            box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+        }
+
+        span.input-group-addon i {
+            color: #009edf;
+            font-size: 17px;
+        }
+
+        select.form-control:not([size]):not([multiple]) {
+            height: calc(2.00rem + 6px);
+        }
+
+        .form-control button {
+            background-color: blue;
+        }
+
+        button, input, optgroup, select, textarea {
+            margin: 0;
+            font: inherit;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+    </div>
+    <div class="container">
+        
+        <div class="well">
+            <div class="main">
+                <div class="main-center">
+                    <h2>Planed Lines Entry</h2>
+                    <form class="" method="post" action="#">
+                        <div class="form-group">
+                            <label for="name">Planed Lines</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="site" id="planedLinesTextBox" placeholder="Enter Site name" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="isActiveSelect">
+                                <option value="-1">Is Active</option>
+                                <option value="0">NO</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <input id="submitBtn" type="button" class="btn btn-outline-dark" value="button" onclick="planedlinesentry()" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <input class="btn btn-info" id="loadButton" type="button" value="Info Load " onclick="LoadGetAllPlanLinesInfo()" />
+        </div>
+        <div class="row" id="showDetails">
+
+        </div>
+    </div>
+    
+</body>
+</html>
